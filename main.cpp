@@ -11,7 +11,7 @@ void seta(Cardioid &card)
   std::cout << "Input a>>";
   double a;
   std::cin >> a;
-  card.setA(a);
+  std::cout << "\n" << "A set to " << card.setA(a);
 }
 
 void geta(Cardioid &card)
