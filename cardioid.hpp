@@ -1,4 +1,5 @@
 #pragma once
+#include <stdexcept>
 
 #include <cmath>
 #ifndef M_PI
@@ -12,7 +13,11 @@ private:
   double _a;
 
 public:
-  Cardioid(double a = 1) : _a(a) {}
+  Cardioid(double a = 1) {
+    if(a < 0)
+      throw std::runtime_error("'a' cant be less then zero.");
+    _a = a;
+  }
   double const &getA() const;
   double &setA(double const &val) { return _a = val; }
   double getR(double const &angle) const { return 2 * _a * (1 - cos(angle)); }
